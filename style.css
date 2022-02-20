@@ -33,7 +33,7 @@ p{
     text-align: center;
     width:60px;
     height:40px;
-   margin-left: 49%;
+ 
    font-weight: bold;
    font-size: 16px;
    border-radius: 10px;
@@ -41,4 +41,49 @@ p{
    
    
 }
+
+.stop{
+    
+    background-color: rgb(184, 197, 197);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:60px;
+    height:40px;
+  
+   font-weight: bold;
+   font-size: 16px;
+   border-radius: 10px;
+   margin-top: 5px;
+   
+   
+}
+
+.reset{
+    
+    background-color: rgb(184, 197, 197);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:60px;
+    height:40px;
+  
+   font-weight: bold;
+   font-size: 16px;
+   border-radius: 10px;
+   margin-top: 5px;
+  
+   
+   
+}
+
+.butoane{
+    
+    margin:auto;
+    width: 200px;
+    height: 200px;
+    display:flex;
+    text-align: center;
+    align-items: center;
+    }
 

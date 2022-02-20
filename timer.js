@@ -1,12 +1,30 @@
 let container=document.querySelector(".container");
 
-let min=5;
+let min=5
 let timerDuration=min*60;
 let timer=document.getElementById("timer");
 
 
-/*let btnStart=document.querySelector(".start");
-btnStart.addEventListener("click",startTimer);*/
+let t;
+
+
+let btnStart=document.querySelector(".start");
+btnStart.addEventListener("click",()=>{
+
+    t=setInterval(startTimer,1000);
+});
+
+
+let btnReset=document.querySelector(".reset");
+btnReset.addEventListener("click",resetTimer);
+
+
+let btnStop=document.querySelector(".stop");
+btnStop.addEventListener("click", stopTimer);
+
+let btnEdit=document.getElementById('timer');
+btnEdit.addEventListener("dblclick",editTimer);
+
 
 
 
@@ -21,11 +39,48 @@ function startTimer(){
        
     timerDuration--;
     timerDuration = timerDuration < 0 ? 0 : timerDuration; 
-   
+
+
 
     
 }
 
+function resetTimer(){
+ location.reload();
+}
+
+function stopTimer(){
+
+    clearInterval(t);
+}
+
+function editTimer(){
+
+let paragraf=document.getElementById('timer');
+paragraf.contentEditable="true";
+window.alert("Introduceti numarul de minute in formatul mm:ss");
+
+if(timerFormat(paragraf)){
+    
+    let mins=extractMins(paragraf);
+}
+
+}
 
 
-setInterval(startTimer,1000);
+function timerFormat(text){
+    const regex = /\d\d:\d\d/g;
+
+    return text.match(regex);
+}
+
+function extractMins(text){
+    if(text){
+        let minute=text.substring(0,2);
+        console.log(minute);
+    }
+
+}
+
+
+
