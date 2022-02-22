@@ -1,6 +1,6 @@
 let container=document.querySelector(".container");
 
-let min=5
+let min=5;
 let timerDuration=min*60;
 let timer=document.getElementById("timer");
 
@@ -29,6 +29,7 @@ btnEdit.addEventListener("dblclick",editTimer);
 
 
 function startTimer(){
+   
     
     let mins=Math.floor(timerDuration/60);
     let secs=timerDuration%60;
@@ -40,10 +41,10 @@ function startTimer(){
     timerDuration--;
     timerDuration = timerDuration < 0 ? 0 : timerDuration; 
 
-
-
+  
     
 }
+
 
 function resetTimer(){
  location.reload();
@@ -58,11 +59,16 @@ function editTimer(){
 
 let paragraf=document.getElementById('timer');
 paragraf.contentEditable="true";
-window.alert("Introduceti numarul de minute in formatul mm:ss");
+window.alert("Daca doriti sa editati timer-ul  trebuie sa introduceti valorile lui in formatul mm:ss");
 
-if(timerFormat(paragraf)){
+if(timerFormat(paragraf)&&stopTimer()){
     
-    let mins=extractMins(paragraf);
+    min=extractMins(paragraf);
+    timerDuration=min*60;
+
+
+    startTimer();
+
 }
 
 }
@@ -71,11 +77,12 @@ if(timerFormat(paragraf)){
 function timerFormat(text){
     const regex = /\d\d:\d\d/g;
 
-    return text.match(regex);
+    return match(regex);
 }
 
 function extractMins(text){
     if(text){
+       
         let minute=text.substring(0,2);
         console.log(minute);
     }
