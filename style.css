@@ -14,14 +14,15 @@ body{
     padding: 10px;
 }
 
-p{
-    align-items: center;
+span#timer{
+    /*align-items: center;
     justify-content: center;
-    text-align: center;
-    font-size: 50px;
+    text-align: center;*/
+    display:flex;
+    font-size:55px;
     margin:auto;
-    width:150px;
-    height:30px;
+    width:100px;
+    height:50px;
 
 }
 

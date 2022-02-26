@@ -22,7 +22,7 @@ btnReset.addEventListener("click",resetTimer);
 let btnStop=document.querySelector(".stop");
 btnStop.addEventListener("click", stopTimer);
 
-let btnEdit=document.getElementById('timer');
+let btnEdit=document.getElementById("timer");
 btnEdit.addEventListener("dblclick",editTimer);
 
 
@@ -59,17 +59,15 @@ function editTimer(){
 
 let paragraf=document.getElementById('timer');
 paragraf.contentEditable="true";
-window.alert("Daca doriti sa editati timer-ul  trebuie sa introduceti valorile lui in formatul mm:ss");
-
+window.alert("Daca doriti sa editati timer-ul introduceti valorile lui in formatul mm:ss");
+   
 if(timerFormat(paragraf)&&stopTimer()){
-    
-    min=extractMins(paragraf);
+    min=extractMins(paragraf.value);
+    /*console.log(min);*/
     timerDuration=min*60;
-
-
     startTimer();
-
 }
+
 
 }
 
@@ -84,7 +82,8 @@ function extractMins(text){
     if(text){
        
         let minute=text.substring(0,2);
-        console.log(minute);
+        /*let min=text.substring(0,2);
+        console.log(minute);*/
     }
 
 }
